@@ -1,0 +1,1 @@
+.\tool\glue .\tool\srlua.exe main.lua main.exe
