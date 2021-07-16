@@ -181,13 +181,14 @@ function Init()
 			is_rest = true
 		end
 	end
+	LogTime("")
 end
 
 --
 function Update()
 	cur_time = cur_time + 1
 
-	if os.date("%H%M%S", cur_time) == "000000" then
+	if os.date("%H%M%S", cur_time) == "040000" then
 		buy_tili = player_data.buytili
 	end
 
@@ -253,6 +254,11 @@ end
 --
 function BuyTili()
 	if buy_tili <= 0 then
+		return
+	end
+
+	local hour = tonumber(os.date("%H", cur_time))
+	if hour < 4 then
 		return
 	end
 
